@@ -73,7 +73,7 @@ ttt$node.label<-paste("N",1:3241,sep="")
 ttt<-force.ultrametric(ttt, method="nnls")
 ttt<-ladderize(ttt, right = TRUE)
 ttt<- read.tree(text = write.tree((ttt)))
-ttt<-rotate(ttt, 335)
+ttt<-ape::rotate(ttt, 335)
 ttt<- read.tree(text = write.tree((ttt)))
 ttt
 
@@ -126,7 +126,7 @@ p3 <- p2 +
     legend.spacing.y = unit(0.02, "cm")  # the distance of legends (y orientation).
   )
 
-pdf("results/Fig.1_circle.pdf", width=10, height=10)
+pdf("results/Fig.1_circle.pdf", width=10, height=10, useDingbats = F)
 p3
 dev.off()
 
