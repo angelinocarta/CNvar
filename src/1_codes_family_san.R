@@ -16,6 +16,10 @@ angiorecordsclean2018$genus<- angiorecordsclean2018$Genus
 merged1<-merge(angiorecordsclean2018, ho2, by="genus")
 merged1$species<-paste(merged1$Genus, merged1$Species, sep="_")
 
+##merged2<-aggregate(csome.number ~ species, merged1, min)#for analyses with min chromosome number
+##mm<- unique(merged1[,c(9,10)])
+##merged2<-merge(merged2, mm, by="species")
+
 #unique chromosome by family
 fam1<- unique(merged1[,c(9,8)])
 species.cn<- na.omit(fam1[order(fam1$family, fam1$csome.number),])
