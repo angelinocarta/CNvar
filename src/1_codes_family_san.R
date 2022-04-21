@@ -77,6 +77,7 @@ dp<-subset(data, clade=="rosids")
 dw<-subset(data, clade=="asterids")
 
 cdat <- comparative.data(data=data, phy=ttt, names.col="species2")
+signal.test<-phylosig(cdat[[1]], setNames(log(cdat[[2]]$SD2), rownames(cdat[[2]])), method="lambda",test=TRUE)
 ca <- comparative.data(data=da, phy=ttt, names.col="species2")
 cp <- comparative.data(data=dp, phy=ttt, names.col="species2")
 cw <- comparative.data(data=dw, phy=ttt, names.col="species2")
@@ -174,11 +175,11 @@ variable<-c("div0", "div0.9", "r.mean", "SR", "age", "div0", "div0.9", "r.mean",
 model.list = list()
 for (i in 1:length(models)){      
   tabellino<-data.frame(variable[i]
-                        , paste(round(intervals(models[[i]], which="all")$coef[1,2], 3), " (", round(intervals(models[[i]], which="all")$coef[1,1], 3 ), "-", round(intervals(models[[i]], which="all")$coef[1,3], 3), ")", sep="")
-                        , paste(round(intervals(models[[i]], which="all")$coef[2,2], 3), " (", round(intervals(models[[i]], which="all")$coef[2,1], 3 ), "-", round(intervals(models[[i]], which="all")$coef[2,3], 3), ")", sep="")
+                        , paste(round(intervals(models[[i]], which="all")$coef[1,2], 3), " (", round(intervals(models[[i]], which="all")$coef[1,1], 3 ), ", ", round(intervals(models[[i]], which="all")$coef[1,3], 3), ")", sep="")
+                        , paste(round(intervals(models[[i]], which="all")$coef[2,2], 3), " (", round(intervals(models[[i]], which="all")$coef[2,1], 3 ), ", ", round(intervals(models[[i]], which="all")$coef[2,3], 3), ")", sep="")
                         , round(summary(models[[i]])$tTable[2,4], 3)
                         , round(R2.pred(mod = models[[i]]), 3)
-                        , paste(round(intervals(models[[i]], which="all")$corStruct[1,2], 3), " (", round(intervals(models[[i]], which="all")$corStruct[1,1], 3 ), "-", round(intervals(models[[i]], which="all")$corStruct[1,3], 3), ")", sep="")
+                        , paste(round(intervals(models[[i]], which="all")$corStruct[1,2], 3), " (", round(intervals(models[[i]], which="all")$corStruct[1,1], 3 ), ", ", round(intervals(models[[i]], which="all")$corStruct[1,3], 3), ")", sep="")
   )
   model.list[[length(model.list)+1]] = tabellino
 }
