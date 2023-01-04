@@ -8,3 +8,7 @@ data including the phylogenetic trees.
 results Output of the R scripts.
 
 src Scripts in R language used to process data and perform the analyses of the manuscript.
+# Citation
+Please cite this repository as:
+
+Carta A, Escudero M (2023) Karyotypic diversity: a neglected trait to explain angiosperm diversification?
