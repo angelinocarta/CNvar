@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/477742795.svg)](https://zenodo.org/badge/latestdoi/477742795)
+
 # Karyotypic diversity: a neglected trait to explain angiosperm diversification?
 This repository stores all information related to the manuscript Karyotypic diversity: a neglected trait to explain angiosperm diversification?, including raw data and R scripts to process and analyse data.
 # Contents
