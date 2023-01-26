@@ -11,4 +11,4 @@ src Scripts in R language used to process data and perform the analyses of the m
 # Citation
 Please cite this repository as:
 
-Carta A, Escudero M (2023) Karyotypic diversity: a neglected trait to explain angiosperm diversification?
+Carta A, Escudero M (2023) Karyotypic diversity: a neglected trait to explain angiosperm diversification? Evolution (in press)
